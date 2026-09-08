@@ -352,7 +352,7 @@ npm run dev
 
 Configure the following in the backend:
 
-- MongoDB URI
+- MySQL URI
 - JWT Secret
 - JWT Expiration
 - Gmail SMTP Credentials
@@ -383,7 +383,7 @@ This project demonstrates practical implementation of:
 
 - Spring Boot REST APIs
 - React Application Development
-- MongoDB Integration
+- MySQL Integration
 - JWT Authentication
 - Google OAuth 2.0
 - Spring Security

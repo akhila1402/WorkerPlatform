@@ -132,7 +132,8 @@ Powered by **Google Gemini API**
 
 ## Database
 
-- MongoDB
+- MySQL
+  
 
 ## AI
 
@@ -150,7 +151,7 @@ Powered by **Google Gemini API**
 # 🏛️ Project Architecture
 
 ```text
-                 React Frontend
+                   React Frontend
                         │
                         ▼
                   REST API Calls
@@ -161,12 +162,19 @@ Powered by **Google Gemini API**
                         ▼
                  Service Layer
                         │
-        ┌───────────────┴───────────────┐
-        ▼                               ▼
-   MongoDB Database              Google Gemini AI
-        │
-        ▼
- Spring Security + JWT Authentication
+              ┌─────────┴─────────┐
+              ▼                   ▼
+      Spring Data JPA       Google Gemini AI
+              │
+              ▼
+           Hibernate
+              │
+              ▼
+        MySQL Database
+
+          Spring Security
+                +
+        JWT Authentication
 ```
 
 ---

@@ -2,11 +2,13 @@ package com.example.backend.Repository;
 
 import java.util.List;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.backend.Models.Application;
 
-public interface ApplicationRepository extends MongoRepository<Application, String> {
-    public List<Application> findByProblemId(String problemId);
-    public List<Application> findByWorkerId(String workerId);
+public interface ApplicationRepository extends JpaRepository<Application, Long> {
+
+    List<Application> findByProblemId(Long problemId);
+
+    List<Application> findByWorkerId(Long workerId);
 }

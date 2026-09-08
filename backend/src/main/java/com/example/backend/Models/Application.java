@@ -1,24 +1,37 @@
 package com.example.backend.Models;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Document(collection = "applications")
+@Entity
+@Table(name = "applications")
 public class Application {
-     @Id
-    private String id;
-    private String problemId;
-    private String workerId;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private Long problemId;
+
+    private Long workerId;
+
     private Double cost;
+
     private String message;
+
     private String estimatedTime;
-    private Status status; // PENDING, ACCEPTED, REJECTED
+
+    private Status status;
 }

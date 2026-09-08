@@ -1,9 +1,11 @@
 package com.example.backend.Repository;
 
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.example.backend.Models.User;
 
-public interface UserRepository extends MongoRepository<User, String> {
-    public User findByEmail(String email);
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByEmail(String email);
+
 }
